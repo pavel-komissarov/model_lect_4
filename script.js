@@ -30,14 +30,14 @@ function updateGraphs() {
             y: U,
             type: 'scatter',
             mode: 'lines',
-            name: 'ЭДС (U)'
+            name: 'ЭДС (U, В)'
         },
         {
             x: t,
             y: I,
             type: 'scatter',
             mode: 'lines',
-            name: 'Ток (I)'
+            name: 'Ток (I, А)'
         }
     ], {
         title: 'Графики зависимости ЭДС и индукционного тока в зависимости от времени',
