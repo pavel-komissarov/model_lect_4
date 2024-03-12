@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моделирование электрогенератора</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        html, body, #graphs {
+            width: 100%;
+            height: 90%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<p>Введите значения, пожалуйста:</p>
+<div>
+    <label for="magnetic-field">Величина магнитного поля (T):</label>
+    <input type="number" id="magnetic-field" value="1"><br>
+    <label for="rotation-frequency">Частота вращения (Гц):</label>
+    <input type="number" id="rotation-frequency" value="1"><br>
+    <label for="circuit-resistance">Сопротивление контура (Ом):</label>
+    <input type="number" id="circuit-resistance" value="4"><br>
+    <button onclick="updateGraphs()">Обновить</button>
+</div>
+<div id="graphs"></div>
+<script src="script.js"></script>
+</body>
+</html>
