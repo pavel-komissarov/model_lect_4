@@ -1,19 +1,19 @@
 function calculateElectromotiveForceAndCurrent(B, v, R, maxTime) {
     let t = [];
-    let U = [];
+    let E = [];
     let I = [];
 
     for (let i = 0; i <= maxTime; i += 0.0001) {
         t.push(i);
         let w = 2 * Math.PI * v
         let wt = w * i;
-        let U_val = w * B * Math.cos(wt);
-        let I_val = U_val / R;
-        U.push(U_val);
+        let E_val = w * B * Math.cos(wt);
+        let I_val = E_val / R;
+        E.push(E_val);
         I.push(I_val);
     }
 
-    return {t, U, I};
+    return {t, E, I};
 }
 
 function updateGraphs() {
@@ -22,15 +22,15 @@ function updateGraphs() {
     let R = parseFloat(document.getElementById('circuit-resistance').value);
     const maxTime = 10; // Максимальное время для расчета (в секундах)
 
-    const {t, U, I} = calculateElectromotiveForceAndCurrent(B, v, R, maxTime);
+    const {t, E, I} = calculateElectromotiveForceAndCurrent(B, v, R, maxTime);
 
     Plotly.newPlot('graphs', [
         {
             x: t,
-            y: U,
+            y: E,
             type: 'scatter',
             mode: 'lines',
-            name: 'ЭДС (U, В)'
+            name: 'ЭДС (E, В)'
         },
         {
             x: t,
